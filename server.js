@@ -7,7 +7,7 @@ const secretKey = process.env.SECRET_PASS
 app.use(require('cors')())
 
 app.get('/', (req, res) => {
-  res.status(200).send("<h1>James' Stock Data API</h1>")
+  res.status(200).send("<h1>Poul's Stock Data API</h1>")
 })
 
 app.get('/:ticker', async (req, res) => {
@@ -74,7 +74,6 @@ app.get('/:ticker', async (req, res) => {
           )
             .get()
             .map((val) => {
-              console.log(val)
               const $ = cheerio.load(val)
               const keyVals = $('td')
                 .get()
